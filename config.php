@@ -5,10 +5,10 @@
   define('FE_URL', 'https://product-listing-test-fe-alex-nascimentoo.vercel.app');
 
   // Defining local variables
-  define('DB_SERVER', 'http://sql10.freesqldatabase.com/');
-  define('DB_USERNAME', 'sql10460610');
-  define('DB_PASSWORD', 'htWCGcspMs');
-  define('DB_NAME', 'sql10460610');
+  define('DB_SERVER', 'http://pimentatestando.com');
+  define('DB_USERNAME', 'root');
+  define('DB_PASSWORD', '');
+  define('DB_NAME', 'scandiweb_test');
 
   // Try to connect to database
   try {
