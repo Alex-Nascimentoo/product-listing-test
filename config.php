@@ -5,9 +5,9 @@
   define('FE_URL', 'https://product-listing-test-fe-alex-nascimentoo.vercel.app');
 
   // Defining local variables
-  define('DB_SERVER', 'http://pimentatestando.com');
+  define('DB_SERVER', '45.132.241.157');
   define('DB_USERNAME', 'root');
-  define('DB_PASSWORD', '');
+  define('DB_PASSWORD', 'umasenhabolada');
   define('DB_NAME', 'scandiweb_test');
 
   // Try to connect to database
