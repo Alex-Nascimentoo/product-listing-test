@@ -1,14 +1,14 @@
 <?php
 
   // Define global variables
-  define('BE_URL', 'http://localhost/PHP/scandiweb-test');
-  define('FE_URL', 'http://localhost:3000');
+  define('BE_URL', 'https://asteriated-period.000webhostapp.com');
+  define('FE_URL', 'https://product-listing-test-fe-alex-nascimentoo.vercel.app');
 
   // Defining local variables
   define('DB_SERVER', 'localhost');
-  define('DB_USERNAME', 'root');
-  define('DB_PASSWORD', '');
-  define('DB_NAME', 'scandiweb_test');
+  define('DB_USERNAME', 'id18162528_root');
+  define('DB_PASSWORD', 'HR0Wx@MxMmrATwjJ');
+  define('DB_NAME', 'id18162528_scandiweb_test');
 
   // Try to connect to database
   try {
