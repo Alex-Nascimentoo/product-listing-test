@@ -5,10 +5,12 @@
   define('FE_URL', 'https://product-listing-test-fe-alex-nascimentoo.vercel.app');
 
   // Defining local variables
-  define('DB_SERVER', 'cleardb.com');
-  define('DB_USERNAME', 'b61343b96d031b');
-  define('DB_PASSWORD', '3bc39a7d');
-  define('DB_NAME', 'heroku_fe6924580902dae');
+  $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+  define('DB_SERVER', $url['host']);
+  define('DB_USERNAME', $url['user']);
+  define('DB_PASSWORD', $url['pass']);
+  define('DB_NAME', substr($url['path'], 1));
 
   // Try to connect to database
   try {
