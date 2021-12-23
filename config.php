@@ -5,7 +5,7 @@
   define('FE_URL', 'https://product-listing-test-fe-alex-nascimentoo.vercel.app');
 
   // Defining local variables
-  define('DB_SERVER', 'us-cdbr-east-05.cleardb.net');
+  define('DB_SERVER', 'cleardb.net');
   define('DB_USERNAME', 'b61343b96d031b');
   define('DB_PASSWORD', '3bc39a7d');
   define('DB_NAME', 'heroku_fe6924580902dae');
