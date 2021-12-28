@@ -1,16 +1,13 @@
 <?php
 
   // Define global variables
-  define('BE_URL', 'https://asteriated-period.000webhostapp.com');
+  define('BE_URL', 'https://pimentatestando.com');
   define('FE_URL', 'https://product-listing-test-fe-alex-nascimentoo.vercel.app');
 
-  // Defining local variables
-  $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-
-  define('DB_SERVER', $url['host']);
-  define('DB_USERNAME', $url['user']);
-  define('DB_PASSWORD', $url['pass']);
-  define('DB_NAME', substr($url['path'], 1));
+  define('DB_SERVER','localhost');
+  define('DB_USERNAME', 'root');
+  define('DB_PASSWORD', '');
+  define('DB_NAME', 'scandiweb_test');
 
   // Try to connect to database
   try {
