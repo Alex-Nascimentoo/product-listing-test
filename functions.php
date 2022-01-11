@@ -31,7 +31,7 @@
 
       // Check if final price is greater than 0 and not a string
       if($finalPrice <= 0 || gettype($finalPrice) == 'string') {
-        $message = "ERROR: The price attribute should be a number greater than 0, please enter a valid number.";
+        $message = "The price attribute should be a number greater than 0, please enter a valid number.";
 
         header('location: '. FE_URL. '/add-product/fail?message='.$message);
         exit;
