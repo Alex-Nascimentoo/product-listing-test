@@ -22,20 +22,18 @@
       if($isProdReal) {
         $message = "A product with the same SKU code already exists, please use another SKU code.";
 
-        header('location: '. FE_URL. '/add-product/repeatedSku?message='.$message);
+        header('location: '. FE_URL. '/add-product/fail?message='.$message);
         exit;
-
-        // Checks if price is of type number
       } 
       
-      $typePrice = (double) $_POST['price'];
+      // Convert the price input to float
+      $finalPrice = floatval($_POST['price']);
 
-      if(true) {
-      // if($typePrice != 'integer' and $typePrice != 'double') {
-        // $message = "ERROR: The price attribute should be a number, please enter a valid number.";
-        $message = $typePrice." and type ".gettype($typePrice);
+      // Check if final price is greater than 0 and not a string
+      if($finalPrice <= 0 || gettype($finalPrice) == 'string') {
+        $message = "ERROR: The price attribute should be a number greater than 0, please enter a valid number.";
 
-        header('location: '. FE_URL. '/add-product/repeatedSku?message='.$message);
+        header('location: '. FE_URL. '/add-product/fail?message='.$message);
         exit;
       }
 
@@ -49,17 +47,43 @@
 
       // Changing the special attribute according to its type
       if($_POST['productType'] == 'book') {
+
+        // Validate if the input is a number
+        if(floatval($_POST['weight']) <= 0) {
+          $message = "Product weight should be a number greater than 0, please enter a valid number.";
+
+          header('location: '. FE_URL.'/add-product/fail?message='.$message);
+          exit;
+        }
+        
         $prod->setAttribute($_POST['weight']);
 
       }else if($_POST['productType'] == 'dvd') {
+
+        // Validate if the input is a number
+        if(intval($_POST['dvdSize']) <= 0) {
+          $message = "Product size should be a number greater than 0, please enter a valid number.";
+
+          header('location: '. FE_URL.'/add-product/fail?message='.$message);
+          exit;
+        }
+
         $prod->setAttribute($_POST['dvdSize']);
 
       }else if($_POST['productType'] == 'furniture') {
 
-        // Get all the single attributes
-        $height = $_POST['height'];
-        $width = $_POST['width'];
-        $length = $_POST['length'];
+        // Convert all the single attributes to number
+        $height = intval($_POST['height']);
+        $width = intval($_POST['width']);
+        $length = intval($_POST['length']);
+
+        // Validate if inputs are greater than 0
+        if($height <= 0 || $width <= 0 || $length <= 0) {
+          $message = "Product dimensions should be numbers greater than 0, please enter valid numbers.";
+
+          header('location: '. FE_URL.'/add-product/fail?message='.$message);
+          exit;
+        }
 
         // Put all the attributes together in one string
         $attr = $height.'x'.$width.'x'.$length;
